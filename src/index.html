@@ -1,9 +1,342 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>New Project</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Валентин Агеев</title>
+    <link rel="icon" type="image/png" href="img/favicon.ico" />
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles/icofont.min.css" type="text/css"/>
   </head>
-  <body></body>
+  <body>
+    <div class="popup popup_callback">
+      <form class="popup__form popup__form_callback">
+        <!-- Hidden Required Fields -->
+        <input type="hidden" name="project_name" value="Portfolio" />
+        <input type="hidden" name="admin_email" value="sazuru@gmail.com" />
+        <input type="hidden" name="form_subject" value="Обратный звонок" />
+        <!-- END Hidden Required Fields -->
+        <h3 class="popup__header">
+          Оставьте свой номер и&nbsp;я&nbsp;Вам перезвоню
+        </h3>
+        <input
+          type="text"
+          name="name"
+          id="callback__name"
+          maxlength="20"
+          placeholder="Имя"
+          class="popup__input"
+          required
+        />
+
+        <input
+          type="tel"
+          name="tel"
+          id="callback__tel"
+          maxlength="11"
+          placeholder="Телефон"
+          class="popup__input"
+          required
+        />
+        <button type="submit" id="submit" class="popup__submit">
+          Заказать звонок
+        </button>
+        <span></span>
+      </form>
+    </div>
+    <div class="popup popup_find-out-more">
+      <form class="popup__form popup__form_find-out-more">
+        <!-- Hidden Required Fields -->
+        <input type="hidden" name="project_name" value="Portfolio" />
+        <input type="hidden" name="admin_email" value="sazuru@gmail.com" />
+        <input type="hidden" name="form_subject" value="Заказать проект" />
+        <!-- END Hidden Required Fields -->
+        <h3 class="popup__header">
+          Напишите мне, и&nbsp;я&nbsp;Вам отвечу в&nbsp;ближайшее время
+        </h3>
+        <input
+          type="text"
+          name="name"
+          id="find-out-more__name"
+          maxlength="20"
+          placeholder="Имя"
+          class="popup__input"
+          required
+        />
+        <input
+          type="email"
+          name="email"
+          id="find-out-more__email"
+          placeholder="E-mail"
+          class="popup__input"
+          required
+        />
+        <textarea
+          name="question"
+          id="find-out-more__question"
+          placeholder="Ваш вопрос"
+          class="popup__textarea"
+        ></textarea>
+        <button type="submit" class="popup__submit">
+          Отправить
+        </button>
+      </form>
+    </div>
+    <header>
+      <div class="header">
+        <div class="fix-container flex-container flex-container_header">
+          <button class="mobile-menu-button" type="button"></button>
+          <nav class="menu">
+            <ul class="menu__list">
+              <li class="menu__item">
+                <a href="#skills" class="menu__link">Услуги</a>
+              </li>
+              <li class="menu__item">
+                <a href="#works" class="menu__link">Портфолио</a>
+              </li>
+              <li class="menu__item">
+                <a href="#price" class="menu__link">Стоимость</a>
+              </li>
+            </ul>
+          </nav>
+          <div class="contacts">
+            <div class="telephone telephone_header">
+              <a href="tel:+7(921)428-61-06">+7 (921) 428-61-06</a>
+            </div>
+            <button class="callback-button callback-button_header">
+              Заказать звонок
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="main-about">
+        <div class="flat-elements">
+          <span class="flat-elements__top top-1">{&nbsp;}</span>
+          <span class="flat-elements__top top-2">#</span>
+          <span class="flat-elements__top top-3">&lt;/&gt;</span>
+          <span class="flat-elements__top top-4">&lt;div&gt;</span>
+          <span class="flat-elements__top top-5">&lt;div&gt;</span>
+        </div>
+        <div class="fix-container flex-container flex-container_main-about">
+          <div class="info">
+            <h1 class="main-about__name">Валентин Агеев</h1>
+            <p class="main-about__speciality">
+              Frontend-разработчик и веб-верстальщик
+            </p>
+            <button class="button-contact">
+              Узнать больше
+            </button>
+          </div>
+          <img
+            class="main-about__photo"
+            src="images/main-about__photo-img1-zip.png"
+            alt="My photo"
+          />
+        </div>
+      </section>
+      <section id="skills" class="main-skills">
+        <div class=" fix-container flex-container flex-container_main-skills">
+          <h2 class="main-skills__name">Что я делаю</h2>
+          <ul class="main-skills__list">
+            <li class="main-skills__item">
+              <figure class="skill">
+                <img
+                  class="skill__image"
+                  src="images/main-skills__item1.png"
+                  alt="Верстка лендингов любой сложности"
+                />
+                <figcaption class="skill__description">
+                  Вёрстка лендинг&mdash;страниц и&nbsp;сайтов любой сложности
+                </figcaption>
+              </figure>
+            </li>
+            <li class="main-skills__item">
+              <figure class="skill">
+                <img
+                  class="skill__image"
+                  src="images/main-skills__item2.png"
+                  alt="Адаптивная верстка"
+                />
+                <figcaption class="skill__description">
+                  Адаптивная вёрстка под все браузеры и&nbsp;устройства
+                </figcaption>
+              </figure>
+            </li>
+            <li class="main-skills__item">
+              <figure class="skill">
+                <img
+                  class="skill__image"
+                  src="images/main-skills__item3.png"
+                  alt="Frontend-разработка"
+                />
+                <figcaption class="skill__description">
+                  Frontend&mdash;разработка и&nbsp;программирование
+                </figcaption>
+              </figure>
+            </li>
+            <li class="main-skills__item">
+              <figure class="skill">
+                <img
+                  class="skill__image"
+                  src="images/main-skills__item4.png"
+                  alt="Исправление и доработка верстки"
+                />
+                <figcaption class="skill__description">
+                  Исправление и&nbsp;доработка существующей вёрстки
+                </figcaption>
+              </figure>
+            </li>
+          </ul>
+          <button class="button-contact">
+            Узнать стоимость
+          </button>
+        </div>
+      </section>
+      <section id="works" class="main-works">
+        <div class="fix-container flex-container flex-container_main-works">
+          <h2 class="main-works__name">Примеры моих работ</h2>
+          <div class="main-works__examples">
+            <div class="example">
+              <a
+                href="http://sazuru.ru/keksby/"
+                target="_blank"
+                class="example__link"
+                ><img
+                  src="images/main-works__examples-item1.png"
+                  alt="work1"
+                  class="example__image"
+              /></a>
+              Сайт "Великий Кексби"
+            </div>
+            <div class="example">
+              <img
+                src="images/main-works__examples-item2.png"
+                alt="work2"
+                class="example__image"
+              />
+              Сайт магазина детской одежды
+            </div>
+            <div class="example">
+              <a
+                href="http://sazuru.ru/newsportal/"
+                target="_blank"
+                class="example__link"
+                ><img
+                  src="images/main-works__examples-item3.png"
+                  alt="work3"
+                  class="example__image"
+              /></a>
+              Сайт "Новостое агенство"
+            </div>
+            <div class="example">
+              <img
+                src="images/main-works__examples-item4.png"
+                alt="work2"
+                class="example__image"
+              />
+              Сайт психолога Веры Антоновой
+            </div>
+          </div>
+          <button class="button-contact">Заказать проект</button>
+        </div>
+      </section>
+      <section id="price" class="main-pricing">
+        <div class="flat-elements">
+          <span class="flat-elements__bottom bottom-1">{&nbsp;}</span>
+          <span class="flat-elements__bottom bottom-2">&lt;/&gt;</span>
+          <span class="flat-elements__bottom bottom-3">&lt;div&gt;</span>
+          <span class="flat-elements__bottom bottom-4">{&nbsp;}</span>
+          <span class="flat-elements__bottom bottom-5">#</span>
+        </div>
+        <div class="fix-container flex-container flex-container_main-pricing">
+          <h2 class="main-pricing__service">
+            Адаптивная вёрстка под все устройства и&nbsp;браузеры от&nbsp;1000
+            рублей всего за&nbsp;4&nbsp;часа.*
+          </h2>
+          <p class="main-pricing__service-info">
+            * Срок и&nbsp;стоимость могут отличаться от&nbsp;заявленных
+            и&nbsp;рассчитываются индивидуально, в&nbsp;зависимости
+            от&nbsp;сложности задач.
+          </p>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="footer">
+        <div class="fix-container flex-container flex-container_footer">
+          <nav class="menu menu_footer">
+            <ul class="menu__list menu__list_footer">
+              <li class="menu__item">
+                <a href="#skills" class="menu__link">Услуги</a>
+              </li>
+              <li class="menu__item">
+                <a href="#works" class="menu__link">Портфолио</a>
+              </li>
+              <li class="menu__item">
+                <a href="#price" class="menu__link">Стоимость</a>
+              </li>
+            </ul>
+          </nav>
+          <div class="footer-contacts">
+            <div class="telephone telephone_footer">
+              <i class="icofont-ui-call"></i>
+              <a href="tel:+7(921)428-61-06">+7 (921) 428-61-06</a>
+            </div>
+            <div class="email">
+              <i class="icofont-ui-message"></i>
+              <a href="mailto:sazuru@gmail.com">sazuru@gmail.com</a>
+            </div>
+          </div>
+          <div class="social-networks">
+            <button class="callback-button callback-button_footer">
+              Заказать звонок
+            </button>
+            <ul class="social-networks__list">
+              <li class="social-networks__item">
+                <a
+                  class="social-networks__link vk"
+                  href="https://vk.com/moon1ight"
+                  target="_blank"
+                ></a>
+              </li>
+              <li class="social-networks__item">
+                <a
+                  class="social-networks__link fb"
+                  href="https://www.facebook.com/profile.php?id=100001233562006"
+                  target="_blank"
+                ></a>
+              </li>
+              <li class="social-networks__item">
+                <a
+                  class="social-networks__link tw"
+                  href="https://twitter.com/home"
+                  target="_blank"
+                ></a>
+              </li>
+              <li class="social-networks__item">
+                <a
+                  class="social-networks__link ig"
+                  href="https://www.instagram.com/ageev_valentin_/"
+                  target="_blank"
+                ></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="copyright">
+        <div class="fix-container">
+          &copy; Валентин Агеев, 2020
+        </div>
+      </div>
+    </footer>
+    <!-- JS and jQuery -->
+    <script src="index.js"></script>
+    <!-- slick -->
+    <script src="js/slick.min.js"></script>
+  </body>
 </html>
