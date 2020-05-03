@@ -1,7 +1,9 @@
 /* eslint-disable func-names */
 import * as $ from 'jquery';
+// eslint-disable-next-line no-unused-vars
+import slick from './js/slick.min';
+import './js/jquery.mask.min.js';
 import './assets/styles/styles.scss';
-import 'slick-carousel';
 
 $(document).ready(function () {
   // slick слайдер
@@ -11,7 +13,7 @@ $(document).ready(function () {
     autoplay: false,
     dots: false,
     slidesToShow: 3,
-    slidesToScroll: 4,
+    slidesToScroll: 1,
     speed: 300,
     cssEase: 'ease-in-out',
     nextArrow: '<button class="next"></button>',
@@ -71,14 +73,14 @@ $(document).ready(function () {
     $('body').toggleClass('hidden');
   });
 
-  $('.popup').click(function (e) {
-    if (event.target == this) {
+  $('.popup').click(function (event) {
+    if (event.target === this) {
       $(this).hide();
       $('body').toggleClass('hidden');
     }
   });
 
-  //Маска для телефона
+  // Маска для телефона
   $(function () {
     $('#callback__tel').mask('+7(000)000-00-00', {
       placeholder: 'Телефон +7(___)___-__-__',
@@ -88,7 +90,7 @@ $(document).ready(function () {
 
   // Отправка данных
   $('.popup__form_callback, .popup__form_find-out-more').submit(function () {
-    var th = $(this);
+    const th = $(this);
     $.ajax({
       type: 'POST',
       url: 'mail.php', // Change

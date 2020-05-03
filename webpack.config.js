@@ -7,7 +7,7 @@ const TerserJSPlugin = require('terser-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 const isDevMode = process.env.NODE_ENV === 'development';
-const isProductionMode = !isDevMode;
+const isProductionMode = process.env.NODE_ENV === 'production';
 const optimization = () => {
   const config = {
     splitChunks: {
@@ -113,7 +113,7 @@ module.exports = {
             loader: 'file-loader',
             options: {
               name: '[name].[ext]',
-              outputPath: 'assets/images/',
+              outputPath: 'images',
             },
           },
         ],
@@ -125,7 +125,7 @@ module.exports = {
             loader: 'file-loader',
             options: {
               name: '[name].[ext]',
-              outputPath: 'assets/fonts/',
+              outputPath: 'fonts',
             },
           },
         ],
