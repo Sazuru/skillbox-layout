@@ -8,16 +8,25 @@ const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 const isDevMode = process.env.NODE_ENV === 'development';
 const isProductionMode = process.env.NODE_ENV === 'production';
+
 const optimization = () => {
   const config = {
     splitChunks: {
       chunks: 'all',
     },
+    minimize: isProductionMode,
+    minimizer: [
+      new TerserJSPlugin({
+        terserOptions: {
+          output: {
+            comments: false,
+          },
+        },
+        extractComments: false,
+      }),
+      new OptimizeCSSAssetsPlugin(),
+    ],
   };
-
-  if (isProductionMode) {
-    config.minimizer = [new OptimizeCSSAssetsPlugin(), new TerserJSPlugin()];
-  }
 
   return config;
 };
@@ -35,8 +44,22 @@ const cssLoaders = (extra) => {
       },
     },
     'css-loader',
-    'postcss-loader',
   ];
+
+  if (isProductionMode) {
+    loaders.push({
+      loader: 'postcss-loader',
+      options: {
+        ident: 'postcss',
+        plugins: (loader) => [
+          require('postcss-import')({ root: loader.resourcePath }),
+          require('postcss-preset-env')(),
+          require('autoprefixer')(),
+          require('cssnano')(),
+        ],
+      },
+    });
+  }
 
   if (extra) {
     loaders.push(extra);
